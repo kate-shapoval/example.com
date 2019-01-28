@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Events of our life</title>
+	<link href="../css/all.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="wrapper">
+		<header  id="header">
+			<strong class="logo"><a href="/">Events of our life</a></strong>
+			<h1 class="slogan">Events of our life</h1>
+		</header>
+		<nav class="navigation">
+			
+				<ul id="nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/events/">Events</a></li>
+				</ul>
+			
+		</nav>
+		<div id="main">
+			<div class="twocolunms">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+		<footer id="footer"><p>&copy; Copyright 2019 by you.</p></footer>
+	</div>
+</body>
+</html>

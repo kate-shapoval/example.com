@@ -1,0 +1,19 @@
+{% extends "TemplateView.html" %}
+{% block content %}
+	<h2>List of events</h2>
+	<ul class="events_list">
+	{% for event in events %}
+	<li>
+		<img src="..{{ event['preview']}}" width="360" height="240" alt="description" />
+		<div class="description">
+			<strong class="title"><a href="{{event['id']}}">{{ event["title"]}}</a></strong>
+			<p>{{ event["short_content"]}}</p>
+			<div class="block_bottom">
+				<em class="author">{{ event["author"]}}</em>
+				<em class="date">{{ event["date"]}}</em>
+			</div>
+		</div>
+	</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

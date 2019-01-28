@@ -1,0 +1,16 @@
+{% extends "TemplateView.html" %}
+{% block content %}
+{% if event!=0 %}
+<div class="post_event">
+	<h2>{{ event["title"]}}</h2>
+	<img src="..{{ event['preview']}}"/>
+	<p>{{ event["content"]}}</p>
+	<div class="block_bottom">
+		<em class="author">{{ event["author"]}}</em>
+		<em class="date">{{ event["date"]}}</em>
+	</div>
+</div>
+{% else %}
+<p>Такого события нет</p>
+{% endif %}
+{% endblock %}
