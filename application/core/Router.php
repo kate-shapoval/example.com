@@ -8,8 +8,7 @@ class Router
 	private $routes;
 	public function __construct()
 	{
-		$config = new Config();
-		$this->routes = $config->getConfig();
+		$this->routes = Config::getInstance()->get();
 	}
 	private static function ErrorPage404()
 	{

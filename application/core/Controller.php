@@ -1,5 +1,5 @@
 <?php
-	//require_once(DEV_ROOT_PATH.'application/core/Router.php');
+	require_once(DEV_ROOT_PATH.'application/core/Router.php');
 	/**
 	 * Controller
 	 */
@@ -8,7 +8,7 @@
 		protected $router;
 		function __construct()
 		{
-			$router = new Router();
+			$this->router = new Router();
 		}
 	}
 ?>
