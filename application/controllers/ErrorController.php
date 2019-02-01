@@ -1,9 +1,10 @@
 <?php
-require_once DEV_ROOT_PATH.'vendor/autoload.php';
+require_once (DEV_ROOT_PATH.'vendor/autoload.php');
+require_once (DEV_ROOT_PATH.'application/core/Controller.php');
 	/**
 	 * MainController
 	 */
-	class ErrorController
+	class ErrorController extends Controller
 	{
 		
 		function actionView()

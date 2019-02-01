@@ -1,10 +1,11 @@
 <?php
 require_once (DEV_ROOT_PATH.'application/models/EventsModel.php');
-require_once DEV_ROOT_PATH.'vendor/autoload.php';
+require_once (DEV_ROOT_PATH.'vendor/autoload.php');
+require_once (DEV_ROOT_PATH.'application/core/Controller.php');
 	/**
 	 * EventsController 
 	 */
-	class EventsController 
+	class EventsController extends Controller
 	{
 		/**
 		 * View single item of articles by id
