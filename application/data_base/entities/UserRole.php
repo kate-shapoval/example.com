@@ -1,10 +1,12 @@
 <?php
-// src/UserRole.php
+require_once(DEV_ROOT_PATH.'application/data_base/Db.php');
 /**
  * @Entity @Table(name="user_roles")
  **/
-class UserRole
+class UserRole extends DB
 {
+    /* Name of Table*/
+    protected $table = "user_roles";
     /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
     /** @Column(type="string") **/

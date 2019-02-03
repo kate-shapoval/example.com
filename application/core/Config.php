@@ -6,8 +6,12 @@
 	{
 		private $config = array();
 		private static $_instance = null;
-		private function __construct() {}
+		private function __construct() 
+		{
+			$this->config=include(DEV_ROOT_PATH.'application/config/routes.php');
+		}
 		protected function __clone() {}
+		private function __wakeup(){}
 		static public function getInstance() 
 		{
 			if(is_null(self::$_instance))
@@ -16,10 +20,8 @@
 			}
 			return self::$_instance;
 		}
-		public function import() {}
 		public function get()
 		{		
-			$this->config=include(DEV_ROOT_PATH.'application/config/routes.php');	
 			return $this->config;
 		}
 	}

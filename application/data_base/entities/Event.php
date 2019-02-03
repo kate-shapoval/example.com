@@ -1,10 +1,12 @@
 <?php
-// src/Event.php
+require_once(DEV_ROOT_PATH.'application/data_base/Db.php');
 /**
  * @Entity @Table(name="events")
  **/
-class Event
+class Event extends DB
 {
+    /* Name of Table*/
+    protected $table = "events";
     /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
     /** @Column(type="string") **/
@@ -22,7 +24,7 @@ class Event
     **/
     protected $id_author;
       /** @Column(type="string") **/
-    protected $tag;
+    protected $alias;
       /** @Column(type="string") **/
     protected $preview;
 
@@ -79,14 +81,14 @@ class Event
         $this->stop_event = $stop_event;
     }
 
-    public function getTagEvent()
+    public function getAlias()
     {
-        return $this->tag;
+        return $this->alias;
     }
 
-    public function setTagEvent($tag)
+    public function setAlias($alias)
     {
-        $this->tag = $tag;
+        $this->alias = $alias;
     }
     public function getPreviewEvent()
     {
@@ -100,6 +102,10 @@ class Event
     public function getIdAuthorEvent()
     {
         return $this->id_author;
+    }
+    public function setIdAuthorEvent($id_author)
+    {
+        $this->id_author = $id_author;
     }
 }
 ?>
