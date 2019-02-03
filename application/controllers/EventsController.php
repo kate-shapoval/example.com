@@ -16,7 +16,7 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 			{
 				$eventItem=array();
 				$eventItem = EventsModel::getEventsItemByID($id);
-				View::viewRender('EventView.html',array('root_path'=>DEV_ROOT_PATH, 'event' => $eventItem));
+				View::getInstance()->viewRender('EventView.html',array('root_path'=>DEV_ROOT_PATH, 'event' => $eventItem));
 			}
 			return true;
 		}
@@ -27,7 +27,7 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 		{
 			$eventsList=array();
 			$eventsList=EventsModel::getEventsList();
-			View::viewRender('EventsIndex.html',array('root_path'=>DEV_ROOT_PATH, 'events' => $eventsList));
+			View::getInstance()->viewRender('EventsIndex.html',array('root_path'=>DEV_ROOT_PATH, 'events' => $eventsList));
 			return true;
 		}
 	}

@@ -10,7 +10,7 @@
 		{
 			$this->config=include(DEV_ROOT_PATH.'application/config/routes.php');
 		}
-		protected function __clone() {}
+		private function __clone() {}
 		private function __wakeup(){}
 		static public function getInstance() 
 		{

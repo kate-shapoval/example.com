@@ -12,16 +12,16 @@
 			$dsn="mysql:host={$paramenrs['host']}; dbname={$paramenrs['dbname']}; charset=utf8";
 			$this->dbConnection = new PDO($dsn,$paramenrs['user'],$paramenrs['password']);
 		}
-		protected function __clone() {}
-			private function __wakeup(){}
-			static public function getInstance() 
+		private function __clone() {}
+		private function __wakeup(){}
+		static public function getInstance() 
+		{
+			if(is_null(self::$_instance))
 			{
-				if(is_null(self::$_instance))
-				{
-				self::$_instance = new self();
-				}
-				return self::$_instance;
+			self::$_instance = new self();
 			}
+			return self::$_instance;
+		}
 		public static function get()
 		{
 			return $this->dbConnection;
