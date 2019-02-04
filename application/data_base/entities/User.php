@@ -8,66 +8,66 @@ class User extends DB
     /* Name of Table*/
     protected $table = "users";
     /** @Id @Column(type="integer") @GeneratedValue **/
-    protected $id;
+    private $id;
     /** @Column(type="string") **/
-    protected $name;
+    private $name;
  /** @Column(type="string") **/
-    protected $email;
+    private $email;
      /** @Column(type="string") **/
-    protected $login;
+    private $login;
      /** @Column(type="string") **/
-    protected $password;
+    private $password;
     /**
     * @ManyToOne(targetEntity="UserRole", inversedBy="id")
     **/
-    protected $id_role_fk;
+    private $id_role_fk;
 
-    public function getIdUser()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getNameUser()
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setNameUser($name)
+    public function setName($name)
     {
         $this->name = $name;
     }
-    public function getEmailUser()
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmailUser($email)
+    public function setEmail($email)
     {
         $this->email = $email;
     }
-    public function getLoginUser()
+    public function getLogin()
     {
         return $this->login;
     }
 
-    public function setLoginUser($login)
+    public function setLogin($login)
     {
         $this->login = $login;
     }
-    public function getPasswordUser()
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPasswordUser($password)
+    public function setPassword($password)
     {
         $this->password = $password;
     }
-    public function getIdRoleForUser()
+    public function getIdRoleFk()
     {
         return $this->id_role_fk;
     }
-    public function setIdRoleForUser($id_role_fk)
+    public function setIdRoleFk($id_role_fk)
     {
         $this->id_role_fk = $id_role_fk;
     }

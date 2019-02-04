@@ -1,8 +1,8 @@
 <?php 
 	/**
-	 * MainModel
+	 * UserModel
 	 */
-	class MainModel{
+	class UserModel{
 		
 		function __construct(argument)
 		{

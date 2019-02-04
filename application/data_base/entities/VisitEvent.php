@@ -18,26 +18,26 @@ class VisitEvent extends DB
      /** @Column(type="datetime") **/
    
 
-    public function getIdEvent()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getIdEvent()
+    public function getIdEventFk()
     {
         return $this->id_event_fk;
     }
 
-    public function setIdEvent($id_event_fk)
+    public function setIdEventFk($id_event_fk)
     {
         $this->id_event_fk = $id_event_fk;
     }
-    public function getIdAuthorEvent()
+    public function getIdUserFk()
     {
         return $this->id_user_fk;
     }
 
-    public function getIdAuthorEvent($id_user_fk)
+    public function setIdUserFk($id_user_fk)
     {
         $this->id_user_fk = $id_user_fk;
     }

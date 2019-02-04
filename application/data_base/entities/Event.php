@@ -8,55 +8,55 @@ class Event extends DB
     /* Name of Table*/
     protected $table = "events";
     /** @Id @Column(type="integer") @GeneratedValue **/
-    protected $id;
+    private $id;
     /** @Column(type="string") **/
-    protected $title;
+    private $title;
  /** @Column(type="text") **/
-    protected $short_content;
+    private $short_content;
      /** @Column(type="text") **/
-    protected $content;
+    private $content;
      /** @Column(type="datetime") **/
-    protected $start_event;
+    private $start_event;
     /** @Column(type="datetime") **/
-    protected $stop_event;
+    private $stop_event;
        /**
     * @ManyToOne(targetEntity="User", inversedBy="id")
     **/
-    protected $id_author_fk;
+    private $id_author_fk;
       /** @Column(type="string") **/
-    protected $alias;
+    private $alias;
       /** @Column(type="string") **/
-    protected $preview;
+    private $preview;
 
-    public function getIdEvent()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getTitleEvent()
+    public function getTitle()
     {
         return $this->title;
     }
 
-    public function setTitleEvent($title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
-    public function getShortContentEvent()
+    public function getShortContent()
     {
         return $this->short_content;
     }
 
-    public function setShortContentEvent($short_content)
+    public function setShortContent($short_content)
     {
         $this->short_content = $short_content;
     }
-    public function getContentEvent()
+    public function getContent()
     {
         return $this->content;
     }
 
-    public function setContentEvent($content)
+    public function setContent($content)
     {
         $this->content = $content;
     }
@@ -90,20 +90,20 @@ class Event extends DB
     {
         $this->alias = $alias;
     }
-    public function getPreviewEvent()
+    public function getPreview()
     {
         return $this->preview;
     }
 
-    public function setPreviewEvent($preview)
+    public function setPreview($preview)
     {
         $this->preview = $preview;
     }
-    public function getIdAuthorEvent()
+    public function getIdAuthorFk()
     {
         return $this->id_author_fk;
     }
-    public function setIdAuthorEvent($id_author_fk)
+    public function setIdAuthorFk($id_author_fk)
     {
         $this->id_author_fk = $id_author_fk;
     }

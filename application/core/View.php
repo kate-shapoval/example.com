@@ -26,6 +26,7 @@
 		public function viewRender($name, array $paramentrs = [])
 		{
 			echo $this->twig->render($name,$paramentrs);
+			return true;
 		}
 	}
 ?>

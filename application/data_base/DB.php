@@ -10,11 +10,11 @@ class DB
 	{
 		$this->dbConnection = DbConnection::getInstance()->get();
 	}
-	/* setOptions */
-	public function setOptions(array $options)
+	/* setAttributes */
+	public function setAttributes(array $attributes)
 	{
 		$methods = get_class_methods($this);
-		foreach ($options as $key => $value) 
+		foreach ($attributes as $key => $value) 
 		{
 			$method ='set'.ucfirst($key);
 			if(in_array($method, $methods))
@@ -35,7 +35,7 @@ class DB
 		while( $row = $resultQuery->fetch())
 		{
 			$temp = new $this();
-			$temp->setOptions($row);
+			$temp->setAttributes($row);
 			$itemsList[] = $temp;
 		}
 	return $itemsList;		
@@ -87,7 +87,7 @@ class DB
 		}
 	}
 	/* delete */
-	public function delete($dbConnection)
+	public function delete($id)
 	{
 		if($this->getId()!= null)
 		{

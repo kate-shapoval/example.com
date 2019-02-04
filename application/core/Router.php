@@ -15,6 +15,7 @@ class Router
 		require_once(DEV_ROOT_PATH.'application/controllers/ErrorController.php');
 		$controllerObject=new ErrorController();
 		$controllerObject->actionView();
+		return true;
     }
 	public function start($uri)
 	{
@@ -56,6 +57,7 @@ class Router
 		if (!$result) {
 			Router::ErrorPage404();
 		}
+		return true;
 	}	
 }
 ?>
