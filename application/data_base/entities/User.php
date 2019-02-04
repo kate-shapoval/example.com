@@ -20,7 +20,7 @@ class User extends DB
     /**
     * @ManyToOne(targetEntity="UserRole", inversedBy="id")
     **/
-    protected $id_role;
+    protected $id_role_fk;
 
     public function getIdUser()
     {
@@ -65,7 +65,11 @@ class User extends DB
     }
     public function getIdRoleForUser()
     {
-        return $this->id_role;
+        return $this->id_role_fk;
+    }
+    public function setIdRoleForUser($id_role_fk)
+    {
+        $this->id_role_fk = $id_role_fk;
     }
 }
 ?>

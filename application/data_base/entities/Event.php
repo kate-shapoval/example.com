@@ -22,7 +22,7 @@ class Event extends DB
        /**
     * @ManyToOne(targetEntity="User", inversedBy="id")
     **/
-    protected $id_author;
+    protected $id_author_fk;
       /** @Column(type="string") **/
     protected $alias;
       /** @Column(type="string") **/
@@ -101,11 +101,11 @@ class Event extends DB
     }
     public function getIdAuthorEvent()
     {
-        return $this->id_author;
+        return $this->id_author_fk;
     }
-    public function setIdAuthorEvent($id_author)
+    public function setIdAuthorEvent($id_author_fk)
     {
-        $this->id_author = $id_author;
+        $this->id_author_fk = $id_author_fk;
     }
 }
 ?>

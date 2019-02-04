@@ -9,10 +9,10 @@ class VisitEvent extends DB
     protected $table = "visit_event";
     /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
-    /** @Column(type="integer") **/
-    protected $id_event_fg;
+    /**@ManyToOne(targetEntity="Event", inversedBy="id") **/
+    protected $id_event_fk;
  /** @ManyToOne(targetEntity="User", inversedBy="id") **/
-    protected $id_user_fg;
+    protected $id_user_fk;
      /** @Column(type="datetime") **/
     protected $time_reminder;
      /** @Column(type="datetime") **/
@@ -25,21 +25,21 @@ class VisitEvent extends DB
 
     public function getIdEvent()
     {
-        return $this->id_event_fg;
+        return $this->id_event_fk;
     }
 
-    public function setIdEvent($id_event_fg)
+    public function setIdEvent($id_event_fk)
     {
-        $this->id_event_fg = $id_event_fg;
+        $this->id_event_fk = $id_event_fk;
     }
     public function getIdAuthorEvent()
     {
-        return $this->id_user_fg;
+        return $this->id_user_fk;
     }
 
-    public function getIdAuthorEvent($id_user_fg)
+    public function getIdAuthorEvent($id_user_fk)
     {
-        $this->id_user_fg = $id_user_fg;
+        $this->id_user_fk = $id_user_fk;
     }
     public function getTimeReminder()
     {
