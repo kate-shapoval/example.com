@@ -1,26 +1,19 @@
 <?php
-	require_once(DEV_ROOT_PATH.'application/data_base/DbConnection.php');
-	require_once(DEV_ROOT_PATH.'application/data_base/entities/Event.php');
+	require_once(DEV_ROOT_PATH.'application/core/DbModel.php');
 	/**
 	 * EventsModel
 	 */
-	class EventsModel
-	{
+	class EventsModel extends DbModel{
 		/**
 		 * Return array of events items
 		 */
-		public static function getEventsList()
-		{
-			$dbConnection=DbConnection::getInstance()->get();
+		public static function getEventsList(){
 			
-			/*$eventsList=array();
-			$dbConnection=DbConnection::getInstance()->get();
 			
-			$resultQuery=$dbConnection->query('SELECT id, title, date, short_content, author, preview FROM events ORDER BY id ASC LIMIT 10');
+			$eventsList = array();
+			$dbConnection = Parent::getConnection();
+			$resultQuery=$dbConnection->query('SELECT id, id_author_fk, title, short_content, preview FROM events ORDER BY id ASC LIMIT 10');
 			$resultQuery->setFetchMode(PDO::FETCH_ASSOC);
-			echo '<pre>';
-			print_r($articlesItem);
-			echo '</pre>';
 			$i = 0;
 			while( $row = $resultQuery->fetch()) {
 				$eventsList[$i]['id'] = $row['id'];
@@ -31,24 +24,23 @@
 				$eventsList[$i]['preview'] = $row['preview'];
 				$i++;
 			}
-			return $eventsList;*/
+			return $eventsList;
 		}
 		/**
 		 * Return single event items by id
 		 * @parametr integer &id
 		 */
-		public static function getEventsItemByID($id)
-		{
-			/*$id=intval($id);
+		public static function getEventsItemByID($id){
+			$id=intval($id);
 			if($id)
 			{
-				$dbConnection=DbConnection::getInstance()->get();
+				$dbConnection = Parent::getConnection();
 				
-				$resultQuery=$dbConnection->query('SELECT title, date, short_content, content, author, preview FROM articles WHERE id='.$id);
+				$resultQuery=$dbConnection->query('SELECT id_author_fk, title, content, preview FROM events WHERE id='.$id);
 				$resultQuery->setFetchMode(PDO::FETCH_ASSOC);
 				$eventsItem=$resultQuery->fetch();
 				return $eventsItem;
-			}*/
+			}
 		}
 	}
 ?>

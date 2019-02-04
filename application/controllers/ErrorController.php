@@ -9,7 +9,8 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 		
 		function actionView()
 		{
-			View::getInstance()->viewRender('404View.html',array('root_path'=>DEV_ROOT_PATH));
+			$view = new View();
+			$view->viewRender('404View.html',array('root_path'=>DEV_ROOT_PATH));
 			return true;
 		}
 	}

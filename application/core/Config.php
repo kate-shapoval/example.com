@@ -2,27 +2,12 @@
 	/**
 	 * class Config 
 	 */
-	class Config
-	{
-		private $config = array();
-		private static $_instance = null;
-		private function __construct() 
-		{
-			$this->config=include(DEV_ROOT_PATH.'application/config/routes.php');
-		}
-		private function __clone() {}
-		private function __wakeup(){}
-		static public function getInstance() 
-		{
-			if(is_null(self::$_instance))
-			{
-			self::$_instance = new self();
+	class Config{
+		public static function get($config){			
+			$pathConfig=DEV_ROOT_PATH.'application/config/'.$config.'.php';	
+			if(file_exists($pathConfig)){
+				return include($pathConfig);
 			}
-			return self::$_instance;
-		}
-		public function get()
-		{		
-			return $this->config;
 		}
 	}
 ?>
