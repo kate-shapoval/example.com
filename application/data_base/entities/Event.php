@@ -9,9 +9,11 @@ class Event extends DB
     protected $table = "events";
     /** @Id @Column(type="integer") @GeneratedValue **/
     private $id;
+    /**@ManyToOne(targetEntity="User", inversedBy="id") **/
+    private $id_author_fk;
     /** @Column(type="string") **/
     private $title;
- /** @Column(type="text") **/
+    /** @Column(type="text") **/
     private $short_content;
      /** @Column(type="text") **/
     private $content;
@@ -19,11 +21,7 @@ class Event extends DB
     private $start_event;
     /** @Column(type="datetime") **/
     private $stop_event;
-       /**
-    * @ManyToOne(targetEntity="User", inversedBy="id")
-    **/
-    private $id_author_fk;
-      /** @Column(type="string") **/
+    /** @Column(type="string") **/
     private $alias;
       /** @Column(type="string") **/
     private $preview;
@@ -32,7 +30,14 @@ class Event extends DB
     {
         return $this->id;
     }
-
+    public function getIdAuthorFk()
+    {
+        return $this->id_author_fk;
+    }
+    public function setIdAuthorFk($id_author_fk)
+    {
+        $this->id_author_fk = $id_author_fk;
+    }
     public function getTitle()
     {
         return $this->title;
@@ -98,14 +103,6 @@ class Event extends DB
     public function setPreview($preview)
     {
         $this->preview = $preview;
-    }
-    public function getIdAuthorFk()
-    {
-        return $this->id_author_fk;
-    }
-    public function setIdAuthorFk($id_author_fk)
-    {
-        $this->id_author_fk = $id_author_fk;
     }
 }
 ?>

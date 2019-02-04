@@ -9,6 +9,10 @@ class User extends DB
     protected $table = "users";
     /** @Id @Column(type="integer") @GeneratedValue **/
     private $id;
+    /**
+    * @ManyToOne(targetEntity="UserRole", inversedBy="id")
+    **/
+    private $id_role_fk;
     /** @Column(type="string") **/
     private $name;
  /** @Column(type="string") **/
@@ -17,16 +21,19 @@ class User extends DB
     private $login;
      /** @Column(type="string") **/
     private $password;
-    /**
-    * @ManyToOne(targetEntity="UserRole", inversedBy="id")
-    **/
-    private $id_role_fk;
-
+    
     public function getId()
     {
         return $this->id;
     }
-
+    public function getIdRoleFk()
+    {
+        return $this->id_role_fk;
+    }
+    public function setIdRoleFk($id_role_fk)
+    {
+        $this->id_role_fk = $id_role_fk;
+    }
     public function getName()
     {
         return $this->name;
@@ -62,14 +69,6 @@ class User extends DB
     public function setPassword($password)
     {
         $this->password = $password;
-    }
-    public function getIdRoleFk()
-    {
-        return $this->id_role_fk;
-    }
-    public function setIdRoleFk($id_role_fk)
-    {
-        $this->id_role_fk = $id_role_fk;
     }
 }
 ?>
