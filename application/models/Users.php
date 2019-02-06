@@ -1,20 +1,25 @@
 <?php 
 require_once(DEV_ROOT_PATH.'application/core/DbModel.php');
 	/**
-	 * User
+	 * Users
 	 */
-	class User extends DbModel{
+	class Users extends DbModel{
 		
 			public static function checkUserForLogin($email, $password){
 				$dbConnection = Parent::getConnection();
-				$sqlQuery = "SELECT * FROM users WHERE email = :email AND password = :password ";
-				$resultQuery = $dbConnection->prepare($sqlQuery);
+				echo $email;
+				echo $password;
+				$resultQuery = $dbConnection->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
 				$resultQuery->bindParam(':email',$email,PDO::PARAM_INT);
 				$resultQuery->bindParam(':password',$password,PDO::PARAM_INT);
 				$resultQuery->execute();
 				$user = $resultQuery->fetch();
+				echo "<pre>";
+					var_dump($user);
+				echo "</pre>";
 				if($user){
-					return $user['id'];
+					//password_verify()
+					return $user;
 				}
 				else{
 					return false;

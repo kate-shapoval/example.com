@@ -1,22 +1,51 @@
 {% extends "TemplateView.html" %}
 {% block content %}
 	<div class="block_login">
-			<h2>Login</h2>
-			<form action="/login/submit/" class="form_login" method="post">
-				<fieldset>
-					<div class="row">
-						<label for="login_field">Login</label>
-						<input type="text" id="login_field" name="email" class="required" />
-					</div>
-					<div class="row">
-						<label for="password_field">Password</label>
-						<input type="password" id="password_field" name="password" class="required" />
-					</div>
-					<div class="row">
-						<input type="submit" class="btn_submit" value="Login" />
-					</div>
-				</fieldset>
-			</form>
-		</div>
+		<h2>Login</h2>
+		<form action="/login" class="form_login" method="post">
+			<fieldset>
+				<div class="row">
+					
+					<label for="login_field">Login</label>
+					<input type="email" id="login_field" name="email" class="required" />
+				</div>
+				<div class="row">
+					<label for="password_field">Password</label>
+					<input type="password" id="password_field" name="password" class="required" />
+				</div>
+				{% if errors['login'] %}
+				<div class="row error">
+					<strong class="error">{{ errors['login'] }}</strong>
+				</div>
+				{% endif %}
+				<div class="row">
+					<input type="submit" name="submit" class="btn_submit" value="Login" />
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="block_registration">
+		<h2>Registration</h2>
+		<form action="/registration" class="form_registration" method="post">
+			<fieldset>
+				<div class="row">
+					<label for="login_field">Name</label>
+					<input type="email" id="login_field" name="email" class="required" />
+				</div>					
+				<div class="row">
+					<label for="login_field">Email</label>
+					<input type="email" id="login_field" name="email" class="required" />
+				</div>
+				<div class="row">
+					<label for="password_field">Password</label>
+					<input type="password" id="password_field" name="password" class="required" />
+				</div>
+				<div class="row">
+					<input type="submit" name="submit" class="btn_submit" value="Login" />
+				</div>
+			</fieldset>
+		</form>
+	</div>
+		
 {% endblock %}
 

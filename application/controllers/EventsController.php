@@ -1,5 +1,5 @@
 <?php
-require_once (DEV_ROOT_PATH.'application/models/EventsModel.php');
+require_once (DEV_ROOT_PATH.'application/models/Events.php');
 require_once (DEV_ROOT_PATH.'application/core/Controller.php');
 require_once (DEV_ROOT_PATH.'application/core/View.php');
 	/**
@@ -15,7 +15,7 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 			if($id)
 			{
 				$eventItem=array();
-				$eventItem = EventsModel::getEventsItemByID($id);
+				$eventItem = Events::getEventsItemByID($id);
 				$view = new View();
 				$view->viewRender('EventView.html',array('root_path'=>DEV_ROOT_PATH, 'event' => $eventItem));
 			}
@@ -27,7 +27,7 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 		public function actionIndex()
 		{
 			$eventsList=array();
-			$eventsList=EventsModel::getEventsList();
+			$eventsList=Events::getEventsList();
 			$view = new View();
 			$view->viewRender('EventsIndex.html',array('root_path'=>DEV_ROOT_PATH, 'events' => $eventsList));
 			return true;

@@ -1,9 +1,9 @@
 <?php
 	require_once(DEV_ROOT_PATH.'application/core/DbModel.php');
 	/**
-	 * EventsModel
+	 * Events
 	 */
-	class EventsModel extends DbModel{
+	class Events extends DbModel{
 		/**
 		 * Return array of events items
 		 */
