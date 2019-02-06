@@ -1,0 +1,22 @@
+{% extends "TemplateView.html" %}
+{% block content %}
+	<div class="block_login">
+			<h2>Login</h2>
+			<form action="/login/submit/" class="form_login" method="post">
+				<fieldset>
+					<div class="row">
+						<label for="login_field">Login</label>
+						<input type="text" id="login_field" name="email" class="required" />
+					</div>
+					<div class="row">
+						<label for="password_field">Password</label>
+						<input type="password" id="password_field" name="password" class="required" />
+					</div>
+					<div class="row">
+						<input type="submit" class="btn_submit" value="Login" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+{% endblock %}
+

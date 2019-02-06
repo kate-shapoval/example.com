@@ -112,6 +112,7 @@ input[type="submit"]{
 	overflow:visible;
 	padding:3px 10px;
 	float:left;
+	margin: 0 0 0 215px;
 }
 input[type="submit"]:hover{
 	cursor:pointer;
@@ -138,6 +139,11 @@ h3{font-size:120%;}
 h4{font-size:110%;}
 h5{font-size:100%;}
 h6{font-size:90%;}
+p{margin: 0 0 25px;}
+img{
+	display: block;
+	margin: 0 0 25px;
+}
 i, cite, em, var, dfn, address{font-style:italic;}
 u, ins {text-decoration: underline;}
 s, strike, del {text-decoration: line-through;}
@@ -217,14 +223,6 @@ ul li{list-style-type:disc;}
 	display:inline;
 	padding:0 5px;
 }
-.form-search{
-	float:right;
-	margin:0;
-}
-.form-search input[type="text"]{
-	width:150px;
-	margin:0 10px 0 0;
-}
 /* navigation */
 .navigation{
 	overflow:hidden;
@@ -286,6 +284,53 @@ ul li{list-style-type:disc;}
     display: block;
     width: 100%;
     height: auto;
+}
+/* form-login */
+.form-login{margin:0;}
+.form-login .row{margin:0 0 15px;}
+.form-login .input-placeholder-text{
+	left:7px;
+	top:4px;
+}
+.form-login label{
+	width:100%;
+	margin:0 0 5px;
+    text-align: left;
+}
+/*.form-login input[type="submit"]{margin: 0 0 0 215px;}*/
+/* form-registration */
+.form-registration{margin:0;}
+.form-registration:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.form-registration .row{margin:0 0 15px;}
+.form-registration strong,
+.form-registration label{
+	width:100%;
+	margin:0 0 5px;
+        text-align: left;
+}
+.form-registration .area label{margin: 0;}
+.form-registration .form-column{
+	float:left;
+        width: 264px;
+	margin:0 5px;
+}
+.form-registration input[type="radio"]{
+	float:left;
+	width:18px;
+	height:18px;
+	padding:0;
+	margin:0;
+}
+.form-registration .row .title{
+    color: #727272;
+    width: auto;
+    float: left;
+    padding: 1px 0 0;
+    margin: 0 10px 0 0;
 }
 /* twocolumns */
 .twocolunms{

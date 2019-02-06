@@ -1,6 +1,8 @@
 {% extends "TemplateView.html" %}
 {% block content %}
-	<h2>List of events</h2>
+<div class="account">
+	<h2>Hello,{{ event["name"]}}!</h2>
+	<h3>List of events</h3>
 	<ul class="events_list">
 	{% for event in events %}
 	<li>
@@ -9,11 +11,11 @@
 			<strong class="title"><a href="{{event['id']}}">{{ event["title"]}}</a></strong>
 			<p>{{ event["short_content"]}}</p>
 			<div class="block_bottom">
-				<em class="author">{{ event["author"]}}</em>
+				<em class="author">{{ event["name"]}}</em>
 				<em class="date">{{ event["start_date"]}}</em>
 			</div>
 		</div>
 	</li>
 	{% endfor %}
-	</ul>
+</div>
 {% endblock %}
