@@ -16,8 +16,13 @@
 				<ul id="nav">
 					<li><a href="/">Home</a></li>
 					<li><a href="/events/">Events</a></li>
-					<li><a href="/login/">Login</a></li>
+					{% if user %}
+					<li><a href="/logout/">Logout</a></li>
 					<li><a href="/account/">Account</a></li>
+					{% else %}
+					<li><a href="/login/">Login</a></li>
+					{% endif %}
+
 				</ul>
 			
 		</nav>

@@ -5,6 +5,7 @@
 		'^events/([0-9]+)$' => 'events/view/$1',
 		'^login$' => 'user/login',
 		'^account$' => 'account/index',
-		'^registration$' => 'user/registration'	 
+		'^registration$' => 'user/registration',
+		'^logout$' => 'user/logout',
  	);
 ?>

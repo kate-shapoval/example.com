@@ -10,7 +10,7 @@ require_once (DEV_ROOT_PATH.'application/models/Events.php');
 			$eventsList=array();
 			$eventsList=Events::getEventsList();
 			$view = new View();
-			$view->viewRender('AccountView.html',array('root_path'=>DEV_ROOT_PATH, 'events' => $eventsList));
+			$view->viewRender('AccountView.html',array('root_path'=>DEV_ROOT_PATH, 'events' => $eventsList, 'user'=>$_SESSION['user']));
 			return true;
 		}
 		function actionEdit(){

@@ -4,8 +4,12 @@
 		<h2>Login</h2>
 		<form action="/login" class="form_login" method="post">
 			<fieldset>
+				{% if errors['loginData'] %}
 				<div class="row">
-					
+					<strong class="error_text">{{ errors['loginData'] }}</strong>
+				</div>
+				{% endif %}
+				<div class="row">
 					<label for="login_field">Login</label>
 					<input type="email" id="login_field" name="email" class="required" />
 				</div>
@@ -13,11 +17,6 @@
 					<label for="password_field">Password</label>
 					<input type="password" id="password_field" name="password" class="required" />
 				</div>
-				{% if errors['login'] %}
-				<div class="row error">
-					<strong class="error">{{ errors['login'] }}</strong>
-				</div>
-				{% endif %}
 				<div class="row">
 					<input type="submit" name="submit" class="btn_submit" value="Login" />
 				</div>
@@ -30,12 +29,22 @@
 			<fieldset>
 				<div class="row">
 					<label for="login_field">Name</label>
-					<input type="email" id="login_field" name="email" class="required" />
-				</div>					
+					<input type="text" id="login_field" name="name" class="required" />
+				</div>	
+				{% if errors['email'] %}
+				<div class="row">
+					<strong class="error_text">{{ errors['email'] }}</strong>
+				</div>
+				{% endif %}				
 				<div class="row">
 					<label for="login_field">Email</label>
 					<input type="email" id="login_field" name="email" class="required" />
 				</div>
+				{% if errors['password'] %}
+				<div class="row">
+					<strong class="error_text">{{ errors['password'] }}</strong>
+				</div>
+				{% endif %}
 				<div class="row">
 					<label for="password_field">Password</label>
 					<input type="password" id="password_field" name="password" class="required" />

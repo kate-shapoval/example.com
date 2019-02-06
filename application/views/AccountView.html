@@ -1,8 +1,8 @@
 {% extends "TemplateView.html" %}
 {% block content %}
 <div class="account">
-	<h2>Hello,{{ user }}!</h2>
-	<h3>List of events</h3>
+	<h2>Hello, {{ user }}!</h2>
+	<h3>List of events you visit</h3>
 	<ul class="events_list">
 	{% for event in events %}
 	<li>
