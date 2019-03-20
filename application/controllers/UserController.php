@@ -19,8 +19,6 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 					header("Location: account/");
 					$view = new View();
 					$view->viewRender('AccountView.html',array('errors'=>$errors, 'user'=>$_SESSION['user']));
-					/*$view = new View();
-					$view->viewRender('AccountView.html',array('errors'=>$errors, 'user'=>$_SESSION['user']));*/
 				}
 				else{
 					$errors['loginData'] = 'Incorrect login data';
@@ -46,7 +44,8 @@ require_once (DEV_ROOT_PATH.'application/core/View.php');
 				}
 				$user = array("name" => $_POST['name'], "email" => $_POST['email'] , "password" => $_POST['password']);
 				$user = Users::addUser($user);
-				if($user['id']){
+				//echo $user['id'];
+				if($user['name']){
 					$_SESSION['user'] = $user['name'];
 					echo $_SESSION['user'];
 					header("Location: account/");

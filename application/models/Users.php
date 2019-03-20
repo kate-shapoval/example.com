@@ -16,7 +16,6 @@ require_once(DEV_ROOT_PATH.'application/core/DbModel.php');
 			$resultQuery->execute();
 			$user = $resultQuery->fetch();
 			if($user){
-				//password_verify()
 				return $user;
 			}
 			else{
@@ -26,7 +25,7 @@ require_once(DEV_ROOT_PATH.'application/core/DbModel.php');
 		public static function addUser(array $user)
 		{
 			$dbConnection = Parent::getConnection();
-			$resultQuery = $dbConnection->prepare("INSERT INTO ".self::$table." (".implode(",",self::$columns).") VALUES (NULL, :".self::$columns[2].", :".self::$columns[3].", :".self::$columns[4].", '2')");
+			$resultQuery = $dbConnection->prepare("INSERT INTO ".self::$table." (".implode(",",self::$columns).") VALUES (NULL, :name, :email, :password, 2)");
 			$resultQuery->bindParam(':name', $user["name"], PDO::PARAM_STR);
 			$resultQuery->bindParam(':email', $user["email"], PDO::PARAM_STR);
 			$resultQuery->bindParam(':password', $user["password"], PDO::PARAM_STR);
